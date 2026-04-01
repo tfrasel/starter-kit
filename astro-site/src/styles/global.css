@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,italic");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: rgba(241, 238, 230, 1);
+  --black: rgba(35, 35, 35, 1);
+  --dark: rgba(18, 18, 18, 1);
+  --section-bg: rgba(235, 233, 226, 1);
+  --stroke: rgba(35, 35, 35, 0.2);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", Helvetica, sans-serif;
+  background-color: var(--bg);
+}
+
+/* FAQ details/summary styles */
+details summary {
+  cursor: pointer;
+  list-style: none;
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .faq-chevron {
+  transform: rotate(180deg);
+}
+.faq-chevron {
+  transition: transform 0.3s ease;
+}
