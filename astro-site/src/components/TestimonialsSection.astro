@@ -1,0 +1,68 @@
+---
+const testimonials = [
+  {
+    id: 1,
+    quote: '"This starter template completely changed my workflow. I saved weeks of setup time, and the design system is a masterpiece of minimalism."',
+    authorInitial: "A",
+    authorName: "Alex Rivera",
+    authorTitle: "Frontend Engineer",
+  },
+  {
+    id: 2,
+    quote: '"Deploying felt effortless. The structure is clean, the defaults are sensible, and customizing it to fit our brand took less than an afternoon."',
+    authorInitial: "S",
+    authorName: "Sofia Chen",
+    authorTitle: "Lead Designer",
+  },
+  {
+    id: 3,
+    quote: '"Finally a template that takes performance seriously. 100/100 Lighthouse out of the box — my clients are thrilled with the results."',
+    authorInitial: "M",
+    authorName: "Marcus Wade",
+    authorTitle: "Freelance Developer",
+  },
+];
+---
+
+<section class="w-full self-center mt-[120px] flex justify-center bg-[#ebe9e2] rounded-3xl overflow-hidden py-[120px]">
+  <div class="flex w-full max-w-[1320px] px-8 flex-col items-center gap-16">
+    <!-- Section heading -->
+    <div class="inline-flex flex-col items-center gap-6">
+      <h2 class="font-bold text-[#232323] text-[61px] text-center tracking-[0.35px] leading-[85.4px] whitespace-nowrap">
+        From idea to deployment
+      </h2>
+      <p class="font-normal text-[#232323cc] text-xl text-center tracking-[-0.45px] leading-7 whitespace-nowrap">
+        Three simple steps to launch your next big project without the headache.
+      </p>
+    </div>
+
+    <!-- Testimonial cards -->
+    <div class="flex items-stretch gap-6 self-stretch w-full">
+      {testimonials.map((t) => (
+        <div class="flex-1 bg-[#f5f4f1] rounded-3xl border border-solid border-[#23232314] shadow-[0px_4px_26px_-4px_#0000000f,0px_10px_25px_-3px_#0000000f] p-8 flex flex-col justify-between gap-6">
+          <!-- Stars and quote -->
+          <div class="flex flex-col items-start gap-6">
+            <img class="flex-shrink-0" alt="5 stars" src="/figmaAssets/frame-62.svg" />
+            <p class="self-stretch font-normal italic text-[#232323cc] text-lg tracking-[-0.44px] leading-[29.2px]">
+              {t.quote}
+            </p>
+          </div>
+
+          <!-- Divider and author -->
+          <div class="flex flex-col items-start gap-4">
+            <div class="w-full h-px bg-[#23232314]"></div>
+            <div class="inline-flex items-center gap-4">
+              <div class="flex w-12 h-12 items-center justify-center bg-[#232323] rounded-full flex-shrink-0">
+                <span class="font-bold text-[#ece5d8] text-lg">{t.authorInitial}</span>
+              </div>
+              <div class="flex flex-col items-start gap-px">
+                <span class="font-bold text-[#232323] text-base tracking-[-0.31px] leading-6">{t.authorName}</span>
+                <span class="font-normal text-[#23232399] text-sm tracking-[-0.15px] leading-5">{t.authorTitle}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
