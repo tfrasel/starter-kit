@@ -1,0 +1,63 @@
+---
+const faqItems = [
+  {
+    id: "q1",
+    question: "Is this template actually free?",
+    answer: "Yes, the Starter Kit is completely free to use for personal and commercial projects. You can download, customize, and deploy it without any licensing fees.",
+  },
+  {
+    id: "q2",
+    question: "Can I use it with Next.js or Vite?",
+    answer: "Absolutely. The Starter Kit is framework-agnostic by design. It works seamlessly with Next.js, Vite, Remix, Astro, and any other modern React-based setup.",
+  },
+  {
+    id: "q3",
+    question: "How do I change the Ivory and Cocoa colors?",
+    answer: "All design tokens are defined as CSS custom properties in your theme file. Simply update the --ivory and --cocoa variables to your preferred values and the changes propagate across the entire UI instantly.",
+  },
+  {
+    id: "q4",
+    question: "Does it score 100/100 on Lighthouse?",
+    answer: "Yes — the template is optimized for performance, accessibility, best practices, and SEO out of the box. We regularly audit every release to maintain a perfect Lighthouse score.",
+  },
+];
+---
+
+<section id="faq" class="flex w-full max-w-[872px] self-center mt-[120px] flex-col items-center gap-16">
+  <!-- Header -->
+  <div class="flex flex-col items-center gap-4">
+    <h2 class="font-bold text-[#232323] text-[61px] text-center tracking-[0.37px] leading-[85.4px] whitespace-nowrap">
+      Frequently asked questions
+    </h2>
+    <p class="self-stretch font-normal text-[#23232399] text-lg text-center tracking-[-0.44px] leading-7">
+      Got questions? We've got answers.
+    </p>
+  </div>
+
+  <!-- FAQ Accordion using native details/summary -->
+  <div class="flex flex-col w-full gap-4">
+    {faqItems.map((item) => (
+      <details class="group bg-[#f5f4f1] rounded-2xl overflow-hidden border border-solid border-[#2323231a] shadow-[0px_1px_2px_-1px_#0000001a,0px_1px_3px_#0000001a] px-6">
+        <summary class="flex items-center justify-between py-6 cursor-pointer">
+          <span class="font-bold text-[#232323] text-xl tracking-[-0.45px] leading-7 pr-4">
+            {item.question}
+          </span>
+          <svg
+            class="faq-chevron w-5 h-5 flex-shrink-0 text-[#232323]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+        <div class="pb-6">
+          <p class="font-normal text-[#23232399] text-base leading-6">
+            {item.answer}
+          </p>
+        </div>
+      </details>
+    ))}
+  </div>
+</section>
