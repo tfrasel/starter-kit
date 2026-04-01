@@ -1,0 +1,27 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Starter Kit — Build faster with a foundation that breathes",
+  description = "A minimalist starter template designed for developers who value clean aesthetics and rapid deployment.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/figmaAssets/icon-1.svg" />
+  </head>
+  <body class="bg-[#f1eee6]">
+    <slot />
+  </body>
+</html>
